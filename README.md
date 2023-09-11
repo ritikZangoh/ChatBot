@@ -6,7 +6,7 @@ Many website owners want chatbots on their sites to assist visitors, but creatin
 
 ## Our Solution 
 
-![alt Flow Chat](./frontend/public/hero.png)
+![alt Flow Chat](./flow-chart.png)
 
 # Chatbot App Setup Guide
 
