@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd GPT-Doc-Chatbot
+cd backend
+
 gunicorn -k eventlet -w 1 runServer:app &
 
 sleep 6

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import ClipLoader from 'react-spinners/ClipLoader'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 export default function Page() {
   const [email, setEmail] = useState('')
@@ -37,7 +38,11 @@ export default function Page() {
         console.log(response)
         localStorage.setItem('auth', true)
         localStorage.setItem('user-id', responseData.user_id)
+        toast.success(responseData.message);
         router.push('/createUser')
+      }
+      else{
+        toast.error(responseData.error);
       }
     } catch (error) {
       console.error('Error:', error)

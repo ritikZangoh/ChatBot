@@ -12,8 +12,6 @@ function CreateUser() {
   const [uuid, setUuid] = useState('')
   const [userId, setUserId] = useState('')
 
-  const p = useRef()
-
   const router = useRouter()
 
   const url = process.env.NEXT_PUBLIC_API_URL
@@ -48,10 +46,13 @@ function CreateUser() {
       const response = await fetch(url + '/api/user/create', options)
       const responseData = await response.json()
 
-      setUuid(responseData.uuid)
+      if(response.status == 200){
+        setUuid(responseData.uuid)
+        toast.success(responseData.message)
+      }
+      else toast.error(responseData.error);
     } catch (error) {
       console.error('Error:', error)
-      toast.error(error.message)
       // Handle errors here
     }
 
@@ -66,10 +67,7 @@ function CreateUser() {
   // Function for copy to clipboard
   const copyMeOnClipboard = () => {
     navigator.clipboard.writeText(uuid)
-    p.current.innerHTML = `${uuid} is copied`
-    setTimeout(() => {
-      p.current.innerHTML = ''
-    }, 2000)
+    toast.success(`Copied`)
   }
 
   return (
@@ -151,7 +149,6 @@ function CreateUser() {
                     Copy
                   </button>
                 </div>
-                <p class="text-green-700" ref={p}></p>
                 <button
                   onClick={nextPage}
                   className="text-white mt-0 bg-purple-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"

@@ -22,11 +22,8 @@ Before you begin, ensure that you have the following software installed on your 
 
 ## Setup
 
-1. **Clone the repository:**
-
-   ```shell
-   git clone <repository-url>
-   ```
+1. **Download the code:**
+Extract the folder, and open the main root folder.
 
 2. **Excute command for setup environment:**
 
@@ -39,26 +36,24 @@ Before you begin, ensure that you have the following software installed on your 
    ```shell
    ./launch-webapp.sh
    ```
+
+4. **Setting environment variables:**
+To configure additional environment variables for your application, In backend/.env file and define them as follows:
+
+
+   * PINECONE_API_KEY=ENTER_PINECONE_KEY
+   * POSTGRESQL_CONNECTION_URI=ENTER_POSRGRECONNECTION_URI
+
+
+     To get pinecone key visit [https://docs.pinecone.io](https://docs.pinecone.io/docs/quickstart#2-get-and-verify-your-pinecone-api-key)
+
 The frontend will be available at [http://localhost:3000](http://localhost:3000) (by default).
-
-## Setting Environment Variables
-To configure additional environment variables for your application, you can create a .env file in the root directory and define them as follows:
-
-   ```shell
-   PINECONE_API_KEY=ENTER_PINECONE_KEY
-   POSTGRESQL_CONNECTION_URI=ENTER_POSRGRECONNECTION_URI
-   ```
-
-To get pinecone key visit [https://docs.pinecone.io](https://docs.pinecone.io/docs/quickstart#2-get-and-verify-your-pinecone-api-key)
-
+<br>
 
 ## **For Production:**
 
-1. **Clone the repository:**
-
-   ```shell
-   git clone <repository-url>
-   ```
+1. **Download the code:**
+Extract the folder, and open the main root folder.
 
 2. **Excute command for setup environment:**
 
@@ -66,19 +61,28 @@ To get pinecone key visit [https://docs.pinecone.io](https://docs.pinecone.io/do
    ./setup.sh
    ```
 
+3. **Setting environment variables:**
+To configure additional environment variables for your application, in backend/.env file and define them as follows:
+
+
+   * PINECONE_API_KEY=ENTER_PINECONE_KEY
+   * POSTGRESQL_CONNECTION_URI=ENTER_POSRGRECONNECTION_URI
+
+
+     To get pinecone key visit [https://docs.pinecone.io](https://docs.pinecone.io/docs/quickstart#2-get-and-verify-your-pinecone-api-key)
+
 4. **Start backend server:**
    
    ```shell
-   cd backend/GPT-Doc-Chatbot
-   pip install gunicorn eventlet
-   gunicorn -k eventlet -w 1 main_beta:app
+   cd backend
+   gunicorn -k eventlet -w 1 main:app
    ```
 
-4. **Configure the frontend to communicate with the backend:**
+5. **Configure the frontend to communicate with the backend:**
 
    Update the API endpoint in your frontend code in .env to match the backend URL (e.g., http://127.0.0.1:8000).
 
-4. **Start frontend server:**
+6. **Start frontend server:**
    
    ```shell
    cd frontend
@@ -87,6 +91,7 @@ To get pinecone key visit [https://docs.pinecone.io](https://docs.pinecone.io/do
    ```
 
 Be sure to configure environment variables, security settings, and database connections as needed.
+The frontend will be available at [http://localhost:3000](http://localhost:3000) (by default).
 
 <br>
 

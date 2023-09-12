@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import ClipLoader from 'react-spinners/ClipLoader'
 
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 export default function SetOpenKey() {
@@ -42,14 +42,13 @@ export default function SetOpenKey() {
       const response = await fetch(url + '/api/set-open-key', options)
       const responseData = await response.json()
 
-      if (response.ok) {
-        toast.success('Openai key saved')
+      if (response == 200) {
+        toast.success(responseData.message)
         router.push('/uploadDocument')
       }
+      else toast.error(responseData.error);
     } catch (error) {
       console.error('Error:', error)
-      toast.error(error.message)
-      // Handle errors here
     }
     setLoading(false)
   }
@@ -87,20 +86,6 @@ export default function SetOpenKey() {
           Submit
         </button>
       </form>
-
-      {/* Toast Container */}
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </div>
   )
 }

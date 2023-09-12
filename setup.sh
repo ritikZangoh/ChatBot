@@ -30,7 +30,7 @@ source venv/bin/activate
 pip3 install --upgrade pip
 
 # Install project dependencies from requirements.txt
-cd GPT-Doc-Chatbot
+cd backend
 echo "Installing project dependencies..."
 pip3 install -r requirements.txt
 
