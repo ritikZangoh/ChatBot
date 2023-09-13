@@ -135,7 +135,7 @@ export default function Page() {
             className="text-[14px] font-bold mt-6 text-[#16192C]"
             style={{ color: '#' + textColor, fontWeight: fontWeight }}
           >
-            Here&apos;s your generated content
+            Here is your generated content
           </h2>
 
           <textarea
