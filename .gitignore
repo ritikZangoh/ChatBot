@@ -5,6 +5,10 @@
 .pnp
 .pnp.js
 venv
+__pycache__
+.vscode
+Archive.zip
+index.html
 
 # testing
 coverage
