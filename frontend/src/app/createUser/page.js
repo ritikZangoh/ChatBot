@@ -46,11 +46,10 @@ function CreateUser() {
       const response = await fetch(url + '/api/user/create', options)
       const responseData = await response.json()
 
-      if(response.status == 200){
+      if (response.status == 200) {
         setUuid(responseData.uuid)
         toast.success(responseData.message)
-      }
-      else toast.error(responseData.error);
+      } else toast.error(responseData.error)
     } catch (error) {
       console.error('Error:', error)
       // Handle errors here

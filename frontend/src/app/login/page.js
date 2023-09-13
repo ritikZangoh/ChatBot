@@ -40,8 +40,7 @@ export default function Page() {
         localStorage.setItem('user-id', responseData.user_id)
         toast.success(responseData.message)
         router.push('/createUser')
-      }
-      else{
+      } else {
         toast.error(responseData.error)
       }
     } catch (error) {

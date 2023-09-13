@@ -18,9 +18,9 @@ module.exports = {
       'primary-light': '#FFE5E6',
       'primary-dark': '#B72D33',
       'primary-bg': '#D4D4D424',
-      'secondary': '#6100FF',
-      'white': '#ffffff'
-    }
+      secondary: '#6100FF',
+      white: '#ffffff',
+    },
   },
   plugins: [],
 }

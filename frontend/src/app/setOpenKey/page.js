@@ -45,8 +45,7 @@ export default function SetOpenKey() {
       if (response == 200) {
         toast.success(responseData.message)
         router.push('/uploadDocument')
-      }
-      else toast.error(responseData.error);
+      } else toast.error(responseData.error)
     } catch (error) {
       console.error('Error:', error)
     }

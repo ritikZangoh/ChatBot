@@ -55,7 +55,7 @@ export const ChatBlock = ({ uuid, name, title, avatar, color, theme }) => {
 
     // Disconnect with socket
     return () => {
-      newSocket.disconnect();
+      newSocket.disconnect()
     }
   }, [])
 
