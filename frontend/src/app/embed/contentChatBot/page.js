@@ -50,7 +50,7 @@ export default function Page() {
   // To get billing status of user
   async function getModalBilingStatus() {
     try {
-      const response = await fetch(url + '/api/paid-status', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/paid_status', {
         method: 'POST',
         body: JSON.stringify({ modalId: modalID }),
       })
@@ -70,7 +70,7 @@ export default function Page() {
     if (!message) message
 
     try {
-      const responce = await fetch('URL_OF_GENERATE_CONTENT', {
+      const responce = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/handle_request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
